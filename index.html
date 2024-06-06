@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change font size</title>
+    <style>
+        body {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p>Front End</p>
+    <button onclick="increaseFontSize()">تكبير حجم الخط</button>
+    <button onclick="decreaseFontSize()">تصغير حجم الخط</button>
+
+    <script>
+        function increaseFontSize() {
+            let body = document.body;
+            let currentFontSize = parseFloat(window.getComputedStyle(body, null).getPropertyValue('font-size'));
+            body.style.fontSize = (currentFontSize + 2) + 'px';
+        }
+
+        function decreaseFontSize() {
+            let body = document.body;
+            let currentFontSize = parseFloat(window.getComputedStyle(body, null).getPropertyValue('font-size'));
+            body.style.fontSize = (currentFontSize - 2) + 'px';
+        }
+    </script>
+</body>
+</html>
+
